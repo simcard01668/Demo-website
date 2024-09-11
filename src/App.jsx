@@ -14,7 +14,7 @@ scrollbar-width: none;
   display: none;
 }
 color: white;
-background: url();
+background: url(../public/img/bg.jpeg);
 `
 
 function App() {
