@@ -18,6 +18,7 @@ justify-content: space-between;
 align-items: center;
 scroll-snap-align: center;
 `
+
 const Left = styled.div`
 display: flex;
 flex-direction: column;
@@ -71,6 +72,13 @@ right: 0;
 bottom: 0;
 left: 0;
 margin: auto;
+animation: animate 2s infinite ease alternate;
+
+@keyframes animate {
+to{
+  transform: translateY(20px);
+}
+}
 `
 
 const Hero = () => {
