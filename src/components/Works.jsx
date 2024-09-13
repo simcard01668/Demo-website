@@ -41,6 +41,11 @@ const ListItem = styled.li`
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
+
+  ::after{
+    content: 'hi';
+    
+  }
 `
 
 

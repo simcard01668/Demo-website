@@ -1,4 +1,4 @@
-
+import Map from './Map'
 import styled from 'styled-components'
 
 const Section = styled.div`
@@ -55,23 +55,26 @@ cursor: pointer;`
 const Right = styled.div`
 flex: 1;
 `
+function handleSubmit(e){
+e.preventDefault()
 
+}
 
 const Contact = () => {
   return (
     <Section>
       <Container>
         <Left>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Title>Contact Us</Title>
             <Input type="text" placeholder="Name" />
             <Input type="text" placeholder="Email" />
             <Textarea placeholder="Write your Message" rows={10}></Textarea>
-            <Button>Send</Button>
+            <Button type="submit">Send</Button>
           </Form>
         </Left>
         <Right>
-
+          <Map/>
         </Right>
       </Container>
     </Section>
