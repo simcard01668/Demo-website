@@ -1,3 +1,7 @@
+import { MeshDistortMaterial, Sphere } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+
 import Navbar from './Navbar'
 import styled from 'styled-components'
 
@@ -58,6 +62,7 @@ cursor: pointer;`
 
 const Right = styled.div`
 flex: 3;
+height: 100%;
 justify-content: center;
 align-items: center;
 position: relative;
@@ -97,7 +102,17 @@ const Hero = () => {
 
         </Left>
         <Right>
-          {/* 3D model */}
+        <Canvas camera={{fov:25, position: [5,5,5]}} >
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} intensity={3} />
+            <Sphere args={[1,100,200]} scale={1.3}>
+               <MeshDistortMaterial 
+               color="#a07dbb" attach="material" distort={0.5} speed={2}
+               />
+            </Sphere>
+           
+          </Canvas>
           <Img src='./img/moon.png'/>
         </Right>
       </Container>
