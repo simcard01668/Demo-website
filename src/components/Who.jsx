@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import Cube from './Cube'
 
 const Section = styled.div`
 height: 100vh;
@@ -18,6 +21,9 @@ scroll-snap-align: center;
 
 const Left = styled.div`
 flex: 1;
+display: flex;
+height: 100vh;
+width: 80%;
 `
 
 const Right = styled.div`
@@ -59,13 +65,17 @@ const Who = () => {
     <Section>
       <Container>
         <Left>
-          {/* 3D model */}
-
+          <Canvas camera={{fov:25, position: [5,5,5]}} >
+            <OrbitControls enableZoom={false} autoRotate/>
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} intensity={1} />
+            <Cube />
+          </Canvas>
         </Left>
         <Right>
           <Title>Think outside the square space</Title>
           <WhatweDo>
-            <Line src='./img/line.png'/>
+            <Line src='./img/line.png' />
             <SubTitle>Who we Are</SubTitle>
           </WhatweDo>
           <Description>a creative group of designers and developers with a passion for the arts.</Description>

@@ -1,4 +1,8 @@
 import styled from 'styled-components'
+import { useState } from 'react'
+import Development from './Development'
+import ProductDesign from './ProductDesign'
+import WebDesign from './WebDesign'
 import './works.css'
 
 const data = [
@@ -55,6 +59,7 @@ flex: 1;`
 
 
 const Works = () => {
+  const [work, setWork] = useState('Web Design')
   return (
     <Section>
       <Container>
@@ -62,14 +67,14 @@ const Works = () => {
           <List>
             {data.map((item) => {
               return (
-                <ListItem key={item}>{item}</ListItem>
+                <ListItem key={item} onClick={()=> setWork(item)}>{item}</ListItem>
               )
             })}
           </List>
         </Left>
 
         <Right>
-
+          {work === "Web Design" ? (<WebDesign />) : work === "Development" ? (<Development />) : (<ProductDesign />)}
         </Right>
       </Container>
     </Section>
