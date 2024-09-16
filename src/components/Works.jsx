@@ -45,13 +45,13 @@ const ListItem = styled.li`
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
+  user-select: none;
 
   ::after{
     content: 'hi';
     
   }
 `
-
 
 
 const Right = styled.div`
