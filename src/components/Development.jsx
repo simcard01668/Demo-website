@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { OrbitControls, Stage } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
@@ -15,6 +16,13 @@ const Development = () => {
 
     </Canvas>
     </>
+=======
+import React from 'react'
+
+const Development = () => {
+  return (
+    <div>Development</div>
+>>>>>>> origin/master
   )
 }
 
