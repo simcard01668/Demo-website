@@ -24,6 +24,10 @@ flex: 1;
 display: flex;
 height: 100vh;
 width: 80%;
+
+@media only screen and (max-width: 768px) {
+  display: none;
+}
 `
 
 const Right = styled.div`
@@ -32,8 +36,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 gap: 20px;
+position: relative;
+
+@media only screen and (max-width: 768px) {
+  align-items: center;
+  text-align: center;
+}
+
 `
-const Title = styled.h1`font-size: 74px;`
+const Title = styled.h1`font-size: 74px;
+@media only screen and (max-width: 768px) {
+font-size: 60px;}
+
+`
 
 const WhatweDo = styled.h3`
 display: flex;

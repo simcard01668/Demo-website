@@ -12,15 +12,27 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
+
+@media only screen and (max-width: 768px) {
+    height: 200vh;
+}
+
 `
 
 const Container = styled.div`
-height: 100vh;
+height: 100%;
 width: 1400px;
 display: flex;
 justify-content: space-between;
 align-items: center;
 scroll-snap-align: center;
+
+@media only screen and (max-width: 768px) {
+  width: 100%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
 `
 
 const Left = styled.div`
@@ -29,9 +41,15 @@ flex-direction: column;
 flex: 2;
 justify-content: center;
 gap: 20px;
+
+@media only screen and (max-width: 768px) {
+  align-items: center;
+flex: 1; }
 `
 
-const Title = styled.h1`font-size: 74px;`
+const Title = styled.h1`font-size: 74px;
+@media only screen and (max-width: 768px) {
+text-align: center;}`
 
 const WhatweDo = styled.h3`
 display: flex;
@@ -46,7 +64,11 @@ color: #da4ea2;`
 
 const Description = styled.p`
 font-size: 24px;
-color: lightgray;`
+color: lightgray;
+
+@media only screen and (max-width: 768px) {
+padding: 20px;
+text-align: center;}`
 
 const Button = styled.button`
 background-color: #da4ea2;
@@ -58,7 +80,7 @@ border: none;
 border-radius: 5px;
 cursor: pointer;`
 
-  
+
 
 const Right = styled.div`
 flex: 3;
@@ -66,6 +88,11 @@ height: 100%;
 justify-content: center;
 align-items: center;
 position: relative;
+
+@media only screen and (max-width: 768px) {
+  width: 100%;
+flex: 1; }
+
 `
 const Img = styled.img`
 width: 800px;
@@ -78,6 +105,10 @@ bottom: 0;
 left: 0;
 margin: auto;
 animation: animate 2s infinite ease alternate;
+
+@media only screen and (max-width: 768px) {
+width: 300px;
+height: 300px;}
 
 @keyframes animate {
 to{
@@ -94,7 +125,7 @@ const Hero = () => {
         <Left>
           <Title>Think. Make. Solve.</Title>
           <WhatweDo>
-            <Line src='./img/line.png'/>
+            <Line src='./img/line.png' />
             <SubTitle>What we Do</SubTitle>
           </WhatweDo>
           <Description>we enjoy creating delightful, human-centered digital experiences.</Description>
@@ -102,23 +133,18 @@ const Hero = () => {
 
         </Left>
         <Right>
-        <Canvas camera={{fov:25, position: [5,5,5]}} >
+          <Canvas camera={{ fov: 25, position: [5, 5, 5] }} >
             <OrbitControls enableZoom={false} />
             <ambientLight intensity={1} />
-<<<<<<< HEAD
             <directionalLight position={[3, 2, 1]} intensity={1} />
-            <Sphere args={[1,100,200]} scale={0.8}>
-=======
-            <directionalLight position={[3, 2, 1]} intensity={3} />
-            <Sphere args={[1,100,200]} scale={1.3}>
->>>>>>> origin/master
-               <MeshDistortMaterial 
-               color="#a07dbb" attach="material" distort={0.5} speed={2}
-               />
+            <Sphere args={[1, 100, 200]} scale={0.8}>
+              <MeshDistortMaterial
+                color="#a07dbb" attach="material" distort={0.5} speed={2}
+              />
             </Sphere>
-           
+
           </Canvas>
-          <Img src='./img/moon.png'/>
+          <Img src='./img/moon.png' />
         </Right>
       </Container>
     </Section>

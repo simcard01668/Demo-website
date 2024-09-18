@@ -21,12 +21,21 @@ flex: 1;
 display: flex;
 align-items: center;
 justify-content: flex-end;
+
+@media only screen and (max-width: 768px) {
+  justify-content: center;
+}
 `
 const Form = styled.form`
 display: flex;
 flex-direction: column;
 width: 500px;
-gap: 25px;`
+gap: 25px;
+
+@media only screen and (max-width: 768px) {
+  width: 300px;
+}
+`
 
 const Title = styled.h1`
 font-weight: 200;
@@ -56,6 +65,10 @@ cursor: pointer;`
 
 const Right = styled.div`
 flex: 1;
+
+@media only screen and (max-width: 768px) {
+display: none;
+}
 `
 
 const Contact = () => {
